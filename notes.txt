@@ -1,0 +1,3 @@
+Be able to see what songs from the other person you are missing
+combined folder
+auto commit & push
