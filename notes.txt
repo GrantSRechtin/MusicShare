@@ -1,3 +1,9 @@
-Be able to see what songs from the other person you are missing
-combined folder
-auto commit & push
+
+
+create combined folder
+- 
+
+set music directory
+- based on musicshare path
+
+pip install -r requirements.txt
