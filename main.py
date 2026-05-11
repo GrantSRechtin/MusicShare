@@ -65,15 +65,19 @@ def sync_music():
     src = os.path.abspath(user)
     dst = os.path.join(onedrive, "MusicShare", user)
 
-    print(f"Syncing {user} -> OneDrive (this may take a while for new files)...")
-    result = subprocess.run(
-        ["robocopy", src, dst, "/MIR", "/MT:8", "/R:3", "/W:5"],
-        text=True
-    )
-    if result.returncode < 8:
-        print("Sync complete. OneDrive will upload changes in the background.")
+    if os.path.isdir(src) and os.listdir(src):
+
+        print(f"Syncing {user} -> OneDrive (this may take a while for new files)...")
+        result = subprocess.run(
+            ["robocopy", src, dst, "/MIR", "/MT:8", "/R:3", "/W:5"],
+            text=True
+        )
+        if result.returncode < 8:
+            print("Sync complete. OneDrive will upload changes in the background.")
+        else:
+            print(f"Sync failed with code {result.returncode}")
     else:
-        print(f"Sync failed with code {result.returncode}")
+        print(f"No local music folder found at {src} — nothing to sync.")
     
 def swap_harmonoid_folder(folder):
     cfg = load_config()
@@ -127,6 +131,7 @@ def init_message():
     print("g = swap harmonoid to Grant's folder")
     print("n = swap harmonoid to Nathaniel's folder")
     print("c = compare music")
+    print("u = update git")
     print("\nPress Ctrl+C to exit")
 
 def get_tag(audio, key):

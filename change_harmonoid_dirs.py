@@ -1,9 +1,4 @@
-import sqlite3
 import json
-
-DB_PATH = r"C:\Users\grechtin\.Harmonoid\Configuration.DB"
-KEY = "MEDIA_LIBRARY_DIRECTORIES"
-
 
 def get_directories(conn, key):
     row = conn.execute(

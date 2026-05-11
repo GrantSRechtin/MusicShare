@@ -1,9 +1,0 @@
-
-
-create combined folder
-- 
-
-set music directory
-- based on musicshare path
-
-pip install -r requirements.txt
