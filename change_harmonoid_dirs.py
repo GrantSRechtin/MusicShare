@@ -18,13 +18,3 @@ def set_directories(conn, directories, key):
         (json.dumps(directories), key),
     )
     conn.commit()
-
-
-if __name__ == "__main__":
-    with sqlite3.connect(DB_PATH) as conn:
-        current = get_directories(conn, KEY)
-        print("Current directories:", current)
-
-        new_dirs = [r"C:\Users\grechtin\Music"]
-        set_directories(conn, new_dirs, KEY)
-        print("Updated directories:", get_directories(conn, KEY))

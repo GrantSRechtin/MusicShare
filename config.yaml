@@ -4,3 +4,4 @@ user: "Grant" # Make same as folder name
 # ── File Locations ────────────────────────────────────────────────────────
 DB_PATH: 'C:\Users\grechtin\.Harmonoid\Configuration.DB'
 KEY: "MEDIA_LIBRARY_DIRECTORIES"
+ONEDRIVE_PATH: 'C:\Users\grechtin\OneDrive - Olin College of Engineering'
